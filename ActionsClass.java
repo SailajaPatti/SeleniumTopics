@@ -8,10 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 public class ActionsClass {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		//Accept insecure certificates
-		//if there is any third party sites from client side for those we need to click advanced and Proceed link rt so to go
-		//directly to login page we use Desired Capapbilities  class for these SSL Certificates to accept insecure cert
+		
 		ChromeOptions capability = new ChromeOptions();
 		capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS,true);
 		capability.addArguments("--remote-allow-origins=*");
@@ -27,13 +24,13 @@ public class ActionsClass {
 		driver.findElement(By.name("submit")).click();
 		driver.findElement(By.xpath("//div[@class='div1']//div[@class='d-flex']//button[text()='Search']")).click();
 		Thread.sleep(2000);
-		//By.id("specification");
+		
 		Select drop = new Select(driver.findElement(By.id("specification")));
 	   drop.selectByValue("CreationOfCelcomNumberPool");
 	   Thread.sleep(1000);
 	Select drop1 = new Select(driver.findElement(By.id("numberService")));
  drop1.selectByValue("PREPAID");
 	}
-//Actions is a class and Action is an interface
+
 	
 }
